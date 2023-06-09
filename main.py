@@ -44,8 +44,8 @@ def picture_finder(net, image, conf_threshold=0.7):
 
             cv2.rectangle(imageOpencvDnn, (x1, y1), (x2, y2), (0, 225, 0), int(round(imageHeight/150)), 8)
 
-        cv2.imwrite("faces/" + image + "_face_found.jpg", imageOpencvDnn)
-        return imageOpencvDnn
+    cv2.imwrite("faces/" + image[:-4] + "_face_found.jpg", imageOpencvDnn)
+    return imageOpencvDnn
 
 
 def highlightFace(net, frame, conf_threshold=0.7):
